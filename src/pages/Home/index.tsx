@@ -8,21 +8,26 @@ export function Home() {
     const posterURL = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/A50Ngq9lh9aCTGHC6kttrppHNoF.jpg"
     return (
         <ScrollView style={styles.container}>
-            <Image
-                source={{ uri: posterURL }}
-                style={styles.posterContainer}
-                resizeMode='stretch'
-            />
+            <View style={styles.posterContainer}>
+                <Image
+                    source={{ uri: posterURL }}
+                    style={styles.posterContainer}
+                    resizeMode='contain'
+                />
+            </View>
+            <Text style={styles.title}> Filmes </Text>
+            <Carousel />
             <Text style={styles.title}>
-                Series
+            Series
             </Text>
             <Carousel />
-            <ScrollView style={{flex:1}}>
-                <Text style={styles.title}>
-                    Series
-                </Text>
-                <Carousel />
-            </ScrollView>
+
+            <Text style={styles.title}>
+            Etc
+            </Text>
+            <Carousel />
         </ScrollView>
     )
 }
+
+

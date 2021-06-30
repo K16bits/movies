@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
+const {height} = Dimensions.get('screen');
 
 export const styles = StyleSheet.create({
     container:{
@@ -6,9 +7,9 @@ export const styles = StyleSheet.create({
         backgroundColor: '#000',
     },
     posterContainer:{
+        borderWidth:1,
         backgroundColor:'red',
-        width: '100%',
-        height: '70%',
+        height:height/2,
     },
     title:{
         color: 'white',
