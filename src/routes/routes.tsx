@@ -11,9 +11,9 @@ export function Routes() {
     return (
         <NavigationContainer>
             <Navigator headerMode='none'>
-                <Screen name="VideoScreen" component={videoScreen} />
-                <Screen name='SignIn' component={SignIn}/>
                 <Screen name="Home" component={Home} />
+                <Screen name='SignIn' component={SignIn}/>
+                <Screen name="VideoScreen" component={videoScreen} />
             </Navigator>
         </NavigationContainer>
     )

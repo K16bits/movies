@@ -1,15 +1,23 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Image} from 'react-native';
-import {FlatList, FlatListProps} from 'react-native';
+import {FlatList} from 'react-native';
 import { styles } from './styles';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
 
 type DataFilm = {
     id: string;
     poster:String
 }
 
-
 export default function Carousel({films}) {
+    const navigate = useNavigation()
+
+    function handleVideo(){
+        navigate.navigate('VideoScreen')
+    }
+
     return(
         <FlatList
             data={films}
@@ -17,11 +25,13 @@ export default function Carousel({films}) {
             horizontal
             keyExtractor={(item)=> item.id}
             renderItem={(item)=>(
-                <Image
-                    source={{uri:item.item.poster}}
-                    style={styles.poster}
-                    resizeMode='stretch'
-                />
+                <TouchableOpacity onPress={()=> handleVideo()}>
+                    <Image
+                        source={{uri:item.item.poster}}
+                        style={styles.poster}
+                        resizeMode='stretch'
+                        />
+                </TouchableOpacity>
             )}
         />
     )
