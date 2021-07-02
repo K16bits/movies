@@ -15,8 +15,8 @@ export const styles = StyleSheet.create({
         justifyContent:'center'
     },
     video:{
-        width: 200,
-        height: 200,
+        width: width,
+        height: 250,
     },
     title:{
         fontFamily:theme.fonts.title,
@@ -34,5 +34,16 @@ export const styles = StyleSheet.create({
         borderColor:'white',
         padding: 10,
         marginLeft:10
-    }
+    },
+    footer:{
+        position:'absolute',
+        bottom: 0,
+        marginBottom: 30,
+    },
+    iconFooter:{
+        color:'white',
+        fontSize:40,
+        padding:5,
+        marginLeft:15,
+    },
 })

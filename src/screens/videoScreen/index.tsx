@@ -9,11 +9,17 @@ import {
     FontAwesome,
     Feather,
 } from '@expo/vector-icons'
+import { useRef } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 export function videoScreen() {
     const videoURL = "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"
+    const media = useRef(null)
+    const navigation = useNavigation()
+
     const [volume,setVolume] = useState(0.7);
     const [playState,setPlayState] = useState(false);
+    const [mediaDuration,setMediaDuration] = useState(0);
 
     function handlePlay(){
         setPlayState(!playState)
@@ -35,11 +41,16 @@ export function videoScreen() {
         console.log(volume)
     }
 
+    function backToHome(){
+        navigation.goBack()
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.videoContainer}>
             <Text style={styles.title}>Video.mp4</Text>
                 <Video
+                    ref={media}
                     style={styles.video}
                     resizeMode='contain'
                     source={{ uri: videoURL }}
@@ -80,6 +91,13 @@ export function videoScreen() {
                             style={styles.icon}
                             />
                     </TouchableOpacity>
+            </View>
+            <View style={styles.footer}>
+                <Feather 
+                    name="arrow-left-circle"
+                    style={styles.iconFooter}
+                    onPress={()=>{backToHome()}}
+                />
             </View>
         </View>
         
