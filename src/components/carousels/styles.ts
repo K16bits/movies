@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     title: {
         color: 'white',
         fontFamily: theme.fonts.title,
+        fontWeight:'bold',
         fontSize: 32,
         letterSpacing: 1,
         marginLeft:15,
