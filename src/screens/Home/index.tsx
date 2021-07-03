@@ -23,15 +23,14 @@ export function Home() {
         getMovies()
     }
         , [])
-    //const posterURL = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/30erzlzIOtOK3k3T3BAl1GiVMP1.jpg"
-    const posterURL = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/A50Ngq9lh9aCTGHC6kttrppHNoF.jpg"
+    const posterURL = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9Xh4fYbcABTsF4cqPzMkD5QSv1z.jpg"
     return (
         <ScrollView style={styles.container}>
             <View style={styles.posterContainer}>
                 <Image
                     source={{ uri: posterURL }}
                     style={styles.posterContainer}
-                    resizeMode='stretch'
+                    resizeMode='contain'
                 />
             </View>
             <Carousel objectFilms={filmsData} title="Filmes" />
