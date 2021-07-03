@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
         backgroundColor: theme.color.background,
     },
     content: {
-
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -15,8 +14,16 @@ export const styles = StyleSheet.create({
         width: 300,
         height: 300,
     },
-    text:{
+    contentText: {
+        width: "90%",
+        padding: 5,
+        borderWidth: 1,
+        borderColor: 'red',
+        justifyContent: 'center',
+    },
+    text: {
         color: 'white',
-        fontFamily:theme.fonts.title,
+        fontFamily: theme.fonts.subtitle,
+        fontSize: 18,
     }
 })

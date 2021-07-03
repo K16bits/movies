@@ -13,16 +13,16 @@ export function Home() {
     const [serieData, setSerieData] = useState('')
 
     async function getMovies() {
-        const responseMovies = await api.get(`trending/movie/week?api_key=${API_URL}`)
+        const responseMovies = await api.get(`trending/movie/week?api_key=${API_URL}&language=pt-BR`)
         setFilmesData(responseMovies.data.results)
-        const responseTv = await api.get(`trending/tv/week?api_key=${API_URL}`)
+        const responseTv = await api.get(`trending/tv/week?api_key=${API_URL}&language=pt-BR`)
         setSerieData(responseTv.data.results)
     }
 
     useEffect(() => {
         getMovies()
-    }
-        , [])
+    }, [])
+
     const posterURL = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9Xh4fYbcABTsF4cqPzMkD5QSv1z.jpg"
     return (
         <ScrollView style={styles.container}>
@@ -33,8 +33,8 @@ export function Home() {
                     resizeMode='contain'
                 />
             </View>
-            <Carousel objectFilms={filmsData} title="Filmes" />
-            <Carousel objectFilms={serieData} title="Series" />
+            <Carousel objectFilms={filmsData} title="Filmes" category='movie'/>
+            <Carousel objectFilms={serieData} title="Series" category='tv'/>
         </ScrollView>
     )
 }
