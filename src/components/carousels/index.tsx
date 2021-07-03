@@ -7,10 +7,10 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 
-export default function Carousel({ objectFilms, title }) {
+export default function Carousel({ objectFilms, title,category}) {
     const navigate = useNavigation()
     function handleVideo(itemID:string) {
-        navigate.navigate('Describe',{itemID})
+        navigate.navigate('Describe',{itemID,category})
     }
     return (
         <>

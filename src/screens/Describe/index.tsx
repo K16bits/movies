@@ -12,14 +12,14 @@ export function Describe() {
     const router = useRoute()
     const [movieData, setMovieData] = useState('')
 
-    async function getMovieID() {
-        const { itemID } = router.params
-        const response = await api.get(`https://api.themoviedb.org/3/movie/${itemID}?api_key=${API_URL}&language=en-US`)
+    async function getDataID() {
+        const { itemID,category } = router.params
+        const response = await api.get(`https://api.themoviedb.org/3/${category}/${itemID}?api_key=${API_URL}&language=pt-BR`)
         setMovieData(response.data)
     }
 
     useEffect(() => {
-        getMovieID()
+        getDataID()
     }, [])
 
     const urlPoster = `https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${movieData.poster_path}`
@@ -31,8 +31,10 @@ export function Describe() {
                     style={styles.image}
                     resizeMode='contain'
                 />
-                <Text style={styles.text}>{movieData.original_title}</Text>
-                <Text style={styles.text}>{movieData.overview}</Text>
+                <Text style={styles.text}>{movieData.title}</Text>
+                <View style={styles.contentText}>
+                    <Text style={styles.text}>{movieData.overview}</Text>
+                </View>
 
             </View>
 
