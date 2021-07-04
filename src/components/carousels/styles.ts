@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
         fontWeight:'bold',
         fontSize: 32,
         letterSpacing: 1,
+        margin: 5,
         marginLeft:15,
         marginBottom:10,
     }

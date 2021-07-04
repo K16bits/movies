@@ -7,10 +7,9 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.color.background,
+        marginTop:getStatusBarHeight()+5
     },
     posterContainer: {
-        width: '100%',
         height: height/2,
-        marginBottom:10,
     },
 })
