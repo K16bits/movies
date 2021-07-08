@@ -12,4 +12,7 @@
 - Na pasta use npm install ou [yarn](https://yarnpkg.com/) start
 - use o comando: npm start ou [yarn](https://yarnpkg.com/) start
 
-OBS: Falta tipar mas to sem tempo :/
+OBS: 
+  - Falta tipar mas to sem tempo :/
+  - sem imagens para evitar copyright    
+  
